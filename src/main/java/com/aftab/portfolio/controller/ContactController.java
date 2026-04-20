@@ -27,4 +27,13 @@ public class ContactController {
 
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("/health")
+    public ResponseEntity<Map<String, String>> healthCheck() {
+        Map<String, String> response = new HashMap<>();
+        response.put("status", "UP");
+        response.put("message", "Portfolio Backend is running");
+
+        return ResponseEntity.ok(response);
+    }
 }
